@@ -10,6 +10,7 @@ This repository introduces an innovative approach using weighted reservoir sampl
 
 - Supports multiple classifier models: `MultinomialNB`, `Perceptron`, `PassiveAggressiveClassifier`, `MLPClassifier`, `SGDClassifier`.
 - Handles complex data streams with `Sequence` and `Itemset` pattern languages.
+- Diverse utility measures `freq`, `area`, `decay`, `HUI`, `HAUI`. 
 - Configurable parameters including sample size, damping factor, batch size, learning and prediction durations, utility measures, and more.
 - GUI for easy configuration and execution.
 - CLI for advanced users and scripting.
