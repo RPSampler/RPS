@@ -52,3 +52,9 @@ python3 RPSampler_CLI.py --model_name MODEL_NAME --data_dir DATA_DIR [--sample_s
 - `alphaDecay`: Exponential decay (default: `0.001`).
 - `patternLanguage`: Pattern language (`Sequence` or `Itemset`) (default: `Sequence`).
 - `classification_task`: Whether to use for classification task (`Y` or `N`) (default: `Y`).
+
+# Additional results
+
+## Theoretical results
+
+![image](https://github.com/RPSampler/RPS/assets/172807587/63330266-8bbf-4d30-843c-71445672efa6)
