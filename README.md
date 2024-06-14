@@ -25,7 +25,9 @@ Before running the code, ensure you have the following Python dependencies insta
 pip install -r requirements.txt
 
 git clone https://github.com/RPSampler/RPS.git
+
 cd RPS
+
 pip install -r requirements.txt
 
 ## Graphical User Interface (GUI)
