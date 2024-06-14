@@ -1,4 +1,4 @@
-
+__author__ = ""
 
 import time
 import argparse
@@ -8,6 +8,7 @@ from sklearn.linear_model import SGDClassifier, PassiveAggressiveClassifier, Per
 from sklearn.naive_bayes import MultinomialNB
 import copy
 import logging
+import sys
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
@@ -34,8 +35,34 @@ def run_all(model, streamdata, sample_size, dampingFactor, utilityMeasure, maxNo
     
     return sampler.Sampler(streamdata) 
 
+def is_combination_valid(utilityMeasure, patternLanguage):
+    valid_combinations = {
+        'Sequence': ['freq', 'area', 'decay'],
+        'Itemset': ['freq', 'area', 'decay', 'HUI', 'HAUI']
+    }
+    
+    if patternLanguage not in valid_combinations:
+        return False
+    
+    allowed_utilities = valid_combinations[patternLanguage]
+    return utilityMeasure in allowed_utilities
+
+def is_directory_compatible_with_pattern(data_directory, patternLanguage, utilityMeasure):
+    return ("benchmark/"+patternLanguage.lower() in data_directory.lower()) or (utilityMeasure.lower() in data_directory.lower())
+
 def execute(params):
     model_name, streamdata, sample_size, dampingFactor, batchsize, predict_duration, learning_duration, utilityMeasure, maxNorm, alphaDecay, patternLanguage, classification_task = params
+    
+    # Check if the combination of utility measure and pattern language is valid
+    if not is_combination_valid(utilityMeasure, patternLanguage):
+        logging.info(f"The combination of Utility Measure {utilityMeasure} and Pattern Language {patternLanguage} is not valid.")
+        sys.exit(0)
+
+    # Check if the pattern language is part of the directory data name
+    if not is_directory_compatible_with_pattern(streamdata, patternLanguage, utilityMeasure):
+        logging.info(f"The data directory {streamdata} is not compatible with the pattern language {patternLanguage}.")
+        sys.exit(0)
+    
     models = {
         'MultinomialNB': MultinomialNB(alpha=0.0001),
         'Perceptron': Perceptron(max_iter=10000, tol=1e-3),
@@ -46,18 +73,28 @@ def execute(params):
 
     model = models[model_name]
     labled = ("Y" == classification_task.upper())
-    weightedItems = (utilityMeasure in ["HUI", "HAUI"])
+    weightedItems = (utilityMeasure == 'HUI' or utilityMeasure ==  'HAUI')
 
     #logging.info(f"Processing file: {streamdata} with model: {model_name}, sample_size: {sample_size}, dampingFactor: {dampingFactor}, batchsize: {batchsize}, predict_duration: {predict_duration}, learning_duration: {learning_duration}")
     start_time = time.time()
-    _, _ = run_all(
-        model, streamdata, sample_size, dampingFactor, 
-        utilityMeasure, maxNorm, alphaDecay, patternLanguage, 
-        batchsize, labled, weightedItems, predict_duration, learning_duration, classification_task)
+    
+    try:
+        reservoir, _ = run_all(
+            model, streamdata, sample_size, dampingFactor, 
+            utilityMeasure, maxNorm, alphaDecay, patternLanguage, 
+            batchsize, labled, weightedItems, predict_duration, learning_duration, classification_task)
+    except ValueError as e:
+        logging.info("Error", str(e))
+        return
     elapsed_time = time.time() - start_time
     
     info = f"Global execution time: {elapsed_time} seconds"
     logging.info(info)
+    
+    reservoir_content = "Reservoir Sample:\n"
+    for patt in reservoir:
+        reservoir_content += str(patt)+"\n"
+    logging.info(reservoir_content)
 
 def main(args):
     models = ['MultinomialNB', 'Perceptron', 'PassiveAggressiveClassifier', 'MLPClassifier', 'SGDClassifier']
@@ -156,5 +193,4 @@ if __name__ == '__main__':
     
     args = parser.parse_args()        
     main(args)
-
 
