@@ -2,7 +2,7 @@
 
 ## Overview
 
-Efficient learning from streaming data is crucial in contemporary data analysis, given the continuous evolution of data streams. Despite significant strides in stream pattern mining, challenges persist, particularly with managing complex data streams such as sequential and weighted itemsets. Reservoir sampling, a fundamental method for randomly selecting fixed-size samples from data streams, has yet to be fully explored for these complex patterns.
+Efficient learning from streaming data is important in data analysis, given the continuous evolution of data streams. Despite significant strides in stream pattern mining, challenges persist, particularly with managing complex data streams such as sequential and weighted itemsets. Reservoir sampling, a fundamental method for randomly selecting fixed-size samples from data streams, has yet to be fully explored for these complex patterns.
 
 This repository introduces an innovative approach using weighted reservoir sampling to facilitate direct pattern sampling from streaming batch data, ensuring scalability and efficiency. Our generic algorithm addresses temporal biases and supports various pattern types, including sequential, weighted, and unweighted itemsets.
 
