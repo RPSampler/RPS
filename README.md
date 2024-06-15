@@ -38,7 +38,7 @@ python3 RPS_runner_CLI.py --model_name MODEL_NAME --data_dir DATA_DIR [--sample_
 
 *Exemple:* python3 RPS_runner_CLI.py --model_name MultinomialNB --data_dir Benchmark/Sequence/Books.num --sample_size 10000 --dampingFactor 0.1 --batchsize 1000 --learning_duration 3 --predict_duration 20 --utilityMeasure decay --maxNorm 10 --alphaDecay 0.001 --patternLanguage Sequence --classification_task Y
 
-### NB: It is also possible to run RPS_runner_CLI.py without arguments and change the default values step by step if needed.
+#### NB: It is also possible to run RPS_runner_CLI.py without arguments and change the default values step by step if needed.
 
 ## Parameters
 
