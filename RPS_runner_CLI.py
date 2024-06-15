@@ -180,7 +180,7 @@ if __name__ == '__main__':
     )
     parser.add_argument('--model_name', type=str, default="MultinomialNB", help='Name of the classifier model to run')
     parser.add_argument('--data_dir', type=str, default="Benchmark/Sequence/Books.num", help='Directory where the datasets are stored')
-    parser.add_argument('--sample_size', type=int, default=10000, help='Size of the reservoir to use')
+    parser.add_argument('--sample_size', type=int, default=5000, help='Size of the reservoir to use')
     parser.add_argument('--dampingFactor', type=float, default=0.1, help='Damping factor for the model')
     parser.add_argument('--batchsize', type=int, default=1000, help='Batch size')
     parser.add_argument('--learning_duration', type=int, default=3, help='Duration of the learning phase')
