@@ -126,7 +126,7 @@ root.title("RPS Model Runner")
 # Define StringVars for the entries
 model_name_var = tk.StringVar(value="MultinomialNB")
 data_dir_var = tk.StringVar(value="Benchmark/Sequence/Books.num")
-sample_size_var = tk.StringVar(value="10000")
+sample_size_var = tk.StringVar(value="5000")
 dampingFactor_var = tk.StringVar(value="0.1")
 batchsize_var = tk.StringVar(value="1000")
 learning_duration_var = tk.StringVar(value="3")
