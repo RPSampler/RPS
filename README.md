@@ -44,7 +44,7 @@ python3 RPS_runner_CLI.py --model_name MODEL_NAME --data_dir DATA_DIR [--sample_
 
 - `model_name`: Name of the classifier model to run (default: `MultinomialNB`).
 - `data_dir`: Directory where the datasets are stored (default: `Benchmark/Sequence/Books.num`).
-- `sample_size`: Size of the reservoir to use (default: `10000`).
+- `sample_size`: Size of the reservoir to use (default: `5000`).
 - `dampingFactor`: Damping factor for the model (default: `0.1`).
 - `batchsize`: Batch size (default: `1000`).
 - `learning_duration`: Duration of the learning phase (default: `3`).
