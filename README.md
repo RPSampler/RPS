@@ -31,12 +31,14 @@ cd RPS
 pip install -r requirements.txt
 
 ## Graphical User Interface (GUI)
-python3 RPSampler_GUI.py
+python3 RPS_runner_GUI.py
 
 ## Command-Line Interface (CLI)
-python3 RPSampler_CLI.py --model_name MODEL_NAME --data_dir DATA_DIR [--sample_size SAMPLE_SIZE] [--dampingFactor DAMPINGFACTOR] [--batchsize BATCHSIZE] [--learning_duration LEARNING_DURATION] [--predict_duration PREDICT_DURATION] [--utilityMeasure UTILITYMEASURE] [--maxNorm MAXNORM] [--alphaDecay ALPHADECAY] [--patternLanguage PATTERNLANGUAGE] [--classification_task CLASSIFICATIONTASK]
+python3 RPS_runner_CLI.py --model_name MODEL_NAME --data_dir DATA_DIR [--sample_size SAMPLE_SIZE] [--dampingFactor DAMPINGFACTOR] [--batchsize BATCHSIZE] [--learning_duration LEARNING_DURATION] [--predict_duration PREDICT_DURATION] [--utilityMeasure UTILITYMEASURE] [--maxNorm MAXNORM] [--alphaDecay ALPHADECAY] [--patternLanguage PATTERNLANGUAGE] [--classification_task CLASSIFICATIONTASK]
 
-*Exemple:* python3 RPS_runner.py --model_name MultinomialNB --data_dir Benchmark/Sequence/Books.num --sample_size 10000 --dampingFactor 0.1 --batchsize 1000 --learning_duration 3 --predict_duration 20 --utilityMeasure decay --maxNorm 10 --alphaDecay 0.001 --patternLanguage Sequence --classification_task Y
+*Exemple:* python3 RPS_runner_CLI.py --model_name MultinomialNB --data_dir Benchmark/Sequence/Books.num --sample_size 10000 --dampingFactor 0.1 --batchsize 1000 --learning_duration 3 --predict_duration 20 --utilityMeasure decay --maxNorm 10 --alphaDecay 0.001 --patternLanguage Sequence --classification_task Y
+
+### NB: It is also possible to run RPS_runner_CLI.py without arguments and change the default values step by step if needed.
 
 ## Parameters
 
