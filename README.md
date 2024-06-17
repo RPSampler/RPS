@@ -1,12 +1,12 @@
 # RPS: A Generic Reservoir Patterns Sampler
 
-## Overview
+## A. Overview
 
 Efficient learning from streaming data is important in data analysis, given the continuous evolution of data streams. Despite significant strides in stream pattern mining, challenges persist, particularly with managing complex data streams such as sequential and weighted itemsets. Reservoir sampling, a fundamental method for randomly selecting fixed-size samples from data streams, has yet to be fully explored for these complex patterns.
 
 This repository introduces an innovative approach using weighted reservoir sampling to facilitate direct pattern sampling from streaming batch data, ensuring scalability and efficiency. Our generic algorithm addresses temporal biases and supports various pattern types, including sequential, weighted, and unweighted itemsets.
 
-## Key Features
+## B. Key Features
 
 - Supports multiple classifier models: `MultinomialNB`, `Perceptron`, `PassiveAggressiveClassifier`, `MLPClassifier`, `SGDClassifier`.
 - Handles complex data streams with `Sequence` and `Itemset` pattern languages.
@@ -15,7 +15,9 @@ This repository introduces an innovative approach using weighted reservoir sampl
 - GUI for easy configuration and execution.
 - CLI for advanced users and scripting.
 
-## Requirements
+## C. Framework implementation
+
+### C.1. Requirements
 
 Before running the code, ensure you have the following Python dependencies installed:
 - numpy
@@ -30,17 +32,16 @@ cd RPS
 
 pip install -r requirements.txt
 
-## Graphical User Interface (GUI)
+### C.2. Graphical User Interface (GUI)
 python3 RPS_runner_GUI.py
-
-## Command-Line Interface (CLI)
+### C.3. Command-Line Interface (CLI)
 python3 RPS_runner_CLI.py --model_name MODEL_NAME --data_dir DATA_DIR [--sample_size SAMPLE_SIZE] [--dampingFactor DAMPINGFACTOR] [--batchsize BATCHSIZE] [--learning_duration LEARNING_DURATION] [--predict_duration PREDICT_DURATION] [--utilityMeasure UTILITYMEASURE] [--maxNorm MAXNORM] [--alphaDecay ALPHADECAY] [--patternLanguage PATTERNLANGUAGE] [--classification_task CLASSIFICATIONTASK] [--labeled_data LABELED_DATA]
 
 *Exemple:* python3 RPS_runner_CLI.py --model_name MultinomialNB --data_dir Benchmark/Sequence/Books.num --sample_size 10000 --dampingFactor 0.1 --batchsize 1000 --learning_duration 3 --predict_duration 20 --utilityMeasure area --maxNorm 5 --alphaDecay 0.001 --patternLanguage Sequence --classification_task N --labeled_data Y
 
 #### NB: It is also possible to run RPS_runner_CLI.py without arguments and change the default values step by step if needed.
 
-## Parameters
+### C.4. Parameters
 
 - `model_name`: Name of the classifier model to run (default: `MultinomialNB`).
 - `data_dir`: Directory where the datasets are stored (default: `Benchmark/Sequence/Books.num`).
@@ -56,23 +57,23 @@ python3 RPS_runner_CLI.py --model_name MODEL_NAME --data_dir DATA_DIR [--sample_
 - `classification_task`: Whether to use for classification task (`Y` or `N`) (default: `N`).
 - `labeled_data `: Whether the data is labeled (`Y` or `N`) (default: `Y`).
 
-# Additional results
+## D. Additional results
 
-## Theoretical results
+### D.1. Theoretical results
 
 ![image](https://github.com/RPSampler/RPS/assets/172807587/63330266-8bbf-4d30-843c-71445672efa6)
 
-## Additional experimental results for the sequential pattern language
+### D.2. Additional experimental results for the sequential pattern language
 The following figure shows the behavior of RPS on different sequential databases as the reservoir size increases with different batch sizes. The experiments are repeated 5 times, and the standard deviations are tiny and not visible in the figure. While the reservoir size has a slight impact on the execution time, the batch size affects only the execution time per batch, not the overall execution time of the entire dataset. This is because RPS weights each instance independently of the batch it belongs to.
 ![image](https://github.com/RPSampler/RPS/assets/172807587/035a237c-aa53-4beb-ab8f-03c7cb63ec32)
-<figcaption>Impact of the reservoir and batch size on the speed</figcaption>
+##### <figcaption>Fig A. Impact of the reservoir and batch size on the speed</figcaption>
 
 
-## Experimental results for Itemset
+### D.3. Experimental results for Itemset
 
 
 
-## Experimental results for Weighted-Itemset (High Utility and High Average-Utility)
+### D.4. Experimental results for Weighted-Itemset
 
 
 
