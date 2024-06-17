@@ -34,9 +34,9 @@ pip install -r requirements.txt
 python3 RPS_runner_GUI.py
 
 ## Command-Line Interface (CLI)
-python3 RPS_runner_CLI.py --model_name MODEL_NAME --data_dir DATA_DIR [--sample_size SAMPLE_SIZE] [--dampingFactor DAMPINGFACTOR] [--batchsize BATCHSIZE] [--learning_duration LEARNING_DURATION] [--predict_duration PREDICT_DURATION] [--utilityMeasure UTILITYMEASURE] [--maxNorm MAXNORM] [--alphaDecay ALPHADECAY] [--patternLanguage PATTERNLANGUAGE] [--classification_task CLASSIFICATIONTASK]
+python3 RPS_runner_CLI.py --model_name MODEL_NAME --data_dir DATA_DIR [--sample_size SAMPLE_SIZE] [--dampingFactor DAMPINGFACTOR] [--batchsize BATCHSIZE] [--learning_duration LEARNING_DURATION] [--predict_duration PREDICT_DURATION] [--utilityMeasure UTILITYMEASURE] [--maxNorm MAXNORM] [--alphaDecay ALPHADECAY] [--patternLanguage PATTERNLANGUAGE] [--classification_task CLASSIFICATIONTASK] [--labeled_data LABELED_DATA]
 
-*Exemple:* python3 RPS_runner_CLI.py --model_name MultinomialNB --data_dir Benchmark/Sequence/Books.num --sample_size 10000 --dampingFactor 0.1 --batchsize 1000 --learning_duration 3 --predict_duration 20 --utilityMeasure decay --maxNorm 10 --alphaDecay 0.001 --patternLanguage Sequence --classification_task Y
+*Exemple:* python3 RPS_runner_CLI.py --model_name MultinomialNB --data_dir Benchmark/Sequence/Books.num --sample_size 10000 --dampingFactor 0.1 --batchsize 1000 --learning_duration 3 --predict_duration 20 --utilityMeasure area --maxNorm 5 --alphaDecay 0.001 --patternLanguage Sequence --classification_task N --labeled_data Y
 
 #### NB: It is also possible to run RPS_runner_CLI.py without arguments and change the default values step by step if needed.
 
@@ -49,11 +49,12 @@ python3 RPS_runner_CLI.py --model_name MODEL_NAME --data_dir DATA_DIR [--sample_
 - `batchsize`: Batch size (default: `1000`).
 - `learning_duration`: Duration of the learning phase (default: `3`).
 - `predict_duration`: Duration of the prediction phase (default: `20`).
-- `utilityMeasure`: Utility measure (`freq`, `area`, `decay`, `HUI`, `HAUI`) (default: `decay`).
-- `maxNorm`: Maximal norm constraint (default: `10`).
+- `utilityMeasure`: Utility measure (`freq`, `area`, `decay`, `HUI`, `HAUI`) (default: `area`).
+- `maxNorm`: Maximal norm constraint (default: `5`).
 - `alphaDecay`: Exponential decay (default: `0.001`).
 - `patternLanguage`: Pattern language (`Sequence` or `Itemset`) (default: `Sequence`).
-- `classification_task`: Whether to use for classification task (`Y` or `N`) (default: `Y`).
+- `classification_task`: Whether to use for classification task (`Y` or `N`) (default: `N`).
+- `labeled_data `: Whether the data is labeled (`Y` or `N`) (default: `Y`).
 
 # Additional results
 
