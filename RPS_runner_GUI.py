@@ -53,7 +53,7 @@ def is_directory_compatible_with_pattern(data_directory, patternLanguage, utilit
     return ("benchmark/"+patternLanguage.lower() in data_directory.lower()) or (utilityMeasure.lower() in data_directory.lower())
 
 def execute(params, output_text, reservoir_text):
-    model_name, streamdata, sample_size, dampingFactor, batchsize, predict_duration, learning_duration, utilityMeasure, maxNorm, alphaDecay, patternLanguage, classification_task = params
+    model_name, streamdata, sample_size, dampingFactor, batchsize, predict_duration, learning_duration, utilityMeasure, maxNorm, alphaDecay, patternLanguage, classification_task, labeled_data = params
     
     # Check if the combination of utility measure and pattern language is valid
     if not is_combination_valid(utilityMeasure, patternLanguage):
@@ -74,7 +74,7 @@ def execute(params, output_text, reservoir_text):
     }
 
     model = models[model_name]
-    labled = ("Y" == classification_task.upper())
+    labled = labeled_data # ("Y" == classification_task.upper())
     weightedItems = (utilityMeasure == 'HUI' or utilityMeasure ==  'HAUI')
 
     start_time = time.time()
@@ -90,7 +90,7 @@ def execute(params, output_text, reservoir_text):
     
     elapsed_time = time.time() - start_time
     
-    info = f"Global execution time: {elapsed_time} seconds"
+    info = f"Global execution time: {elapsed_time} seconds with {params}"
     logging.info(info)
     output_text.insert(tk.END, info + "\n")
     reservoir_content = "Reservoir Sample:\n"
@@ -115,7 +115,8 @@ def run_model(output_text, reservoir_text):
         int(maxNorm_var.get()),
         float(alphaDecay_var.get()),
         patternLanguage_var.get(),
-        classification_task_var.get()
+        classification_task_var.get(),
+        labeled_data_var.get()
     )
     execute(params, output_text, reservoir_text)
 
@@ -132,10 +133,11 @@ batchsize_var = tk.StringVar(value="1000")
 learning_duration_var = tk.StringVar(value="3")
 predict_duration_var = tk.StringVar(value="20")
 utilityMeasure_var = tk.StringVar(value="decay")
-maxNorm_var = tk.StringVar(value="2")
+maxNorm_var = tk.StringVar(value="5")
 alphaDecay_var = tk.StringVar(value="0.001")
 patternLanguage_var = tk.StringVar(value="Sequence")
 classification_task_var = tk.StringVar(value="Y")
+labeled_data_var = tk.StringVar(value="Y")
 
 # Define the options for the comboboxes
 model_options = ['MultinomialNB', 'Perceptron', 'PassiveAggressiveClassifier', 'MLPClassifier', 'SGDClassifier']
@@ -155,7 +157,8 @@ labels_and_vars = [
     ("Maximal Norm Constraint:", maxNorm_var, None),
     ("Exponential Decay:", alphaDecay_var, None),
     ("Pattern Language:", patternLanguage_var, pattern_language_options),
-    ("Classification Task (Y/N):", classification_task_var, ['Y', 'N'])
+    ("Classification Task (Y/N):", classification_task_var, ['N', 'Y']),
+    ("Labeled Data (Y/N):", labeled_data_var, ['Y', 'N'])
 ]
 
 for i, (label, var, options) in enumerate(labels_and_vars):
