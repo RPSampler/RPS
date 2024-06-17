@@ -51,7 +51,7 @@ def is_directory_compatible_with_pattern(data_directory, patternLanguage, utilit
     return ("benchmark/"+patternLanguage.lower() in data_directory.lower()) or (utilityMeasure.lower() in data_directory.lower())
 
 def execute(params):
-    model_name, streamdata, sample_size, dampingFactor, batchsize, predict_duration, learning_duration, utilityMeasure, maxNorm, alphaDecay, patternLanguage, classification_task = params
+    model_name, streamdata, sample_size, dampingFactor, batchsize, predict_duration, learning_duration, utilityMeasure, maxNorm, alphaDecay, patternLanguage, classification_task, labeled_data = params
     
     # Check if the combination of utility measure and pattern language is valid
     if not is_combination_valid(utilityMeasure, patternLanguage):
@@ -72,7 +72,7 @@ def execute(params):
     }
 
     model = models[model_name]
-    labled = ("Y" == classification_task.upper())
+    labled = labeled_data#("Y" == classification_task.upper())
     weightedItems = (utilityMeasure == 'HUI' or utilityMeasure ==  'HAUI')
 
     #logging.info(f"Processing file: {streamdata} with model: {model_name}, sample_size: {sample_size}, dampingFactor: {dampingFactor}, batchsize: {batchsize}, predict_duration: {predict_duration}, learning_duration: {learning_duration}")
@@ -123,6 +123,7 @@ def main(args):
     - Pattern language: {args.patternLanguage}
     - Classification task: {args.classification_task}
     - Stream file name: {args.data_dir}
+    - Labeled data: {args.labeled_data}
     """
     print(welcome_message)
         
@@ -138,6 +139,7 @@ def main(args):
     alphaDecay = args.alphaDecay
     patternLanguage = args.patternLanguage
     classification_task = args.classification_task
+    labeled_data = args.labeled_data
     
     new_param_values = input("Do you need to change parameters value? (Y/N): ")
     if new_param_values.upper() == "Y":
@@ -153,6 +155,7 @@ def main(args):
         alphaDecay = input(f'Exponential decay value [default {alphaDecay}]: ') or alphaDecay
         patternLanguage = input(f'Pattern language [default {patternLanguage}]: ') or patternLanguage
         classification_task = input(f'Classification task ? (Y/N) [default {classification_task}]: ') or classification_task
+        labeled_data = input(f'Labeled data ? (Y/N) [default {labeled_data}]: ') or labeled_data
     
     sample_size = int(sample_size)
     dampingFactor = float(dampingFactor)
@@ -167,7 +170,7 @@ def main(args):
         sample_size, dampingFactor, 
         batchsize, predict_duration, 
         learning_duration, utilityMeasure, maxNorm,
-        alphaDecay, patternLanguage, classification_task
+        alphaDecay, patternLanguage, classification_task, labeled_data
     )
     execute(param_combination)
 
@@ -185,12 +188,14 @@ if __name__ == '__main__':
     parser.add_argument('--batchsize', type=int, default=1000, help='Batch size')
     parser.add_argument('--learning_duration', type=int, default=3, help='Duration of the learning phase')
     parser.add_argument('--predict_duration', type=int, default=20, help='Duration of the prediction phase')
-    parser.add_argument('--utilityMeasure', type=str, default='decay', help='Utility measure')
-    parser.add_argument('--maxNorm', type=int, default=10, help='Maximal norm constraint')
+    parser.add_argument('--utilityMeasure', type=str, default='area', help='Utility measure')
+    parser.add_argument('--maxNorm', type=int, default=5, help='Maximal norm constraint')
     parser.add_argument('--alphaDecay', type=float, default=0.001, help='Exponential decay')
     parser.add_argument('--patternLanguage', type=str, default='Sequence', help='Pattern language')
-    parser.add_argument('--classification_task', type=str, default="Y", help='Use for classification task')
+    parser.add_argument('--classification_task', type=str, default="N", help='Use for classification task')
+    parser.add_argument('--labeled_data', type=str, default="Y", help='Is the data labeled for classification task ?')
     
     args = parser.parse_args()        
     main(args)
+
 
