@@ -64,7 +64,7 @@ python3 RPS_runner_CLI.py --model_name MODEL_NAME --data_dir DATA_DIR [--sample_
 
 ## Experimental results
 
-![image][Impact of the reservoir and batch size on the speed](https://github.com/RPSampler/RPS/assets/172807587/035a237c-aa53-4beb-ab8f-03c7cb63ec32)
-
+![image](https://github.com/RPSampler/RPS/assets/172807587/035a237c-aa53-4beb-ab8f-03c7cb63ec32)
+<figcaption>Caption for the image</figcaption>
 
 
