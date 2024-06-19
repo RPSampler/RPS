@@ -71,10 +71,28 @@ The following figure shows the behavior of RPS on different sequential databases
 
 ### D.3. Experimental results for Itemset
 
+## Our benchmark
+
+| Database           | \|D\|     | \|I\|   | \|\|\Gamma\|\|_{max} | \|\|\Gamma\|\|_{avg} |
+|--------------------|-----------|--------|----------------------|----------------------|
+| **Itemsets**       |           |        |                      |                      |
+| OnlineRetail       | 541,909   | 2,603  | 8                    | 4.37                 |
+| Kddcup99           | 1,000,000 | 135    | 16                   | 16                   |
+| PowerC             | 1,040,000 | 140    | 7                    | 7                    |
+| Susy               | 5,000,000 | 190    | 19                   | 19                   |
 
 
 ### D.4. Experimental results for Weighted-Itemset
 
 
+## Our benchmark
+
+| Database           | \|D\|     | \|I\|   | \|\|\Gamma\|\|_{max} | \|\|\Gamma\|\|_{avg} |
+|--------------------|-----------|--------|----------------------|----------------------|
+| **Weighted itemsets** |       |        |                      |                      |
+| ECommerce          | 14,975    | 3,468  | 29                   | 11.71                |
+| FruithutUI         | 181,970   | 1,265  | 36                   | 3.59                 |
+| ChainstoreUI       | 1,112,949 | 46,086 | 168                  | 7.23                 |
+| ChicagoCrimes      | 2,662,309 | 35     | 13                   | 1.79                 |
 
 
