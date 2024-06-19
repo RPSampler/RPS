@@ -84,7 +84,7 @@ The following figure shows the behavior of RPS on different sequential databases
 ### D.4. Experimental results for Weighted-Itemset
 
 
-## Our benchmark on Weighted itemsets
+## Our benchmark on Weighted itemsets (For HUI and HAUI)
 
 | Database           | \|D\|     | \|I\|   | \|\|γ\|\|<sub>max</sub>| \|\|γ\|\|<sub>avg</sub> |
 |--------------------|-----------|--------|----------------------|----------------------|
