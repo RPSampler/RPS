@@ -66,7 +66,9 @@ python3 RPS_runner_CLI.py --model_name MODEL_NAME --data_dir DATA_DIR [--sample_
 ### D.2. Additional experimental results for the sequential pattern language
 The following figure shows the behavior of RPS on different sequential databases as the reservoir size increases with different batch sizes. The experiments are repeated 5 times, and the standard deviations are tiny and not visible in the figure. While the reservoir size has a slight impact on the execution time, the batch size affects only the execution time per batch, not the overall execution time of the entire dataset. This is because RPS weights each instance independently of the batch it belongs to.
 <figcaption>
+  
 ![image](https://github.com/RPSampler/RPS/assets/172807587/035a237c-aa53-4beb-ab8f-03c7cb63ec32)
+
 Fig 1. Impact of the reservoir and batch size on the speed
 </figcaption>
 
