@@ -73,7 +73,7 @@ The following figure shows the behavior of RPS on different sequential databases
 
 ## Our benchmark on Itemsets
 
-| Database           | \|D\|     | \|I\|   | \|\|γ\|\|<sub>max</sub>| \|\|γ\|\|_{avg} |
+| Database           | \|D\|     | \|I\|   | \|\|γ\|\|<sub>max</sub>| \|\|γ\|\|<sub>avg</sub>  |
 |--------------------|-----------|--------|----------------------|----------------------|
 | OnlineRetail       | 541,909   | 2,603  | 8                    | 4.37                 |
 | Kddcup99           | 1,000,000 | 135    | 16                   | 16                   |
@@ -86,7 +86,7 @@ The following figure shows the behavior of RPS on different sequential databases
 
 ## Our benchmark on Weighted itemsets
 
-| Database           | \|D\|     | \|I\|   | \|\|γ\|\|_{max} | \|\|γ\|\|_{avg} |
+| Database           | \|D\|     | \|I\|   | \|\|γ\|\|<sub>max</sub>| \|\|γ\|\|<sub>avg</sub> |
 |--------------------|-----------|--------|----------------------|----------------------|
 | ECommerce          | 14,975    | 3,468  | 29                   | 11.71                |
 | FruithutUI         | 181,970   | 1,265  | 36                   | 3.59                 |
