@@ -65,13 +65,15 @@ python3 RPS_runner_CLI.py --model_name MODEL_NAME --data_dir DATA_DIR [--sample_
 
 ### D.2. Additional experimental results for the sequential pattern language
 The following figure shows the behavior of RPS on different sequential databases as the reservoir size increases with different batch sizes. The experiments are repeated 5 times, and the standard deviations are tiny and not visible in the figure. While the reservoir size has a slight impact on the execution time, the batch size affects only the execution time per batch, not the overall execution time of the entire dataset. This is because RPS weights each instance independently of the batch it belongs to.
+<figcaption>
 ![image](https://github.com/RPSampler/RPS/assets/172807587/035a237c-aa53-4beb-ab8f-03c7cb63ec32)
-##### <figcaption>Fig D.2.1. Impact of the reservoir and batch size on the speed</figcaption>
+Fig 1. Impact of the reservoir and batch size on the speed
+</figcaption>
 
 
 ### D.3. Experimental results for Itemset
 
-<tabcaption> Tab: Our benchmark on Itemsets
+<tabcaption> Tab 1: Our benchmark on Itemsets
 | Database           | \|D\|     | \|I\|   | \|\|γ\|\|<sub>max</sub>| \|\|γ\|\|<sub>avg</sub>  |
 |--------------------|-----------|--------|----------------------|----------------------|
 | OnlineRetail       | 541,909   | 2,603  | 8                    | 4.37                 |
@@ -83,13 +85,12 @@ The following figure shows the behavior of RPS on different sequential databases
 ### D.4. Experimental results for Weighted-Itemset
 
 
-## Our benchmark on Weighted itemsets (For HUI and HAUI)
-
+<tabcaption> Tab 2:benchmark on Weighted itemsets (For HUI and HAUI)
 | Database           | \|D\|     | \|I\|   | \|\|γ\|\|<sub>max</sub>| \|\|γ\|\|<sub>avg</sub> |
 |--------------------|-----------|--------|----------------------|----------------------|
 | ECommerce          | 14,975    | 3,468  | 29                   | 11.71                |
 | FruithutUI         | 181,970   | 1,265  | 36                   | 3.59                 |
 | ChainstoreUI       | 1,112,949 | 46,086 | 168                  | 7.23                 |
 | ChicagoCrimes      | 2,662,309 | 35     | 13                   | 1.79                 |
-
+</tabcaption>
 
