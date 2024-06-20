@@ -69,13 +69,14 @@ The following figure shows the behavior of RPS on different sequential databases
   
 ![image](https://github.com/RPSampler/RPS/assets/172807587/035a237c-aa53-4beb-ab8f-03c7cb63ec32)
 
-Fig 1. Impact of the reservoir and batch size on the speed
-</figcaption>
+*Fig 1. Impact of the reservoir and batch size on the speed*
+</figcaption> 
 
 
 ### D.3. Experimental results for unweighted Itemset and Weighted-Itemset
+These benchmarks contain real-world databases sourced from the SPMF repository (https://www.philippe-fournier-viger.com/spmf/index.php?link=datasets.php).
 
-<tabcaption> Tab 1: Our benchmark on Itemsets
+<tabcaption> *Tab 1: Our benchmark on unweighted Itemsets*
 | Database           | \|D\|     | \|I\|   | \|\|γ\|\|<sub>max</sub>| \|\|γ\|\|<sub>avg</sub>  |
 |--------------------|-----------|--------|----------------------|----------------------|
 | ORetail       | 541,909   | 2,603  | 8                    | 4.37                 |
@@ -84,7 +85,7 @@ Fig 1. Impact of the reservoir and batch size on the speed
 | Susy               | 5,000,000 | 190    | 19                   | 19                   |
 </tabcaption>
 
-<tabcaption> Tab 2:benchmark on Weighted itemsets (For HUI and HAUI)
+<tabcaption> *Tab 2:benchmark on Weighted itemsets (For HUI and HAUI)*
 | Database           | \|D\|     | \|I\|   | \|\|γ\|\|<sub>max</sub>| \|\|γ\|\|<sub>avg</sub> |
 |--------------------|-----------|--------|----------------------|----------------------|
 | ECommerce          | 14,975    | 3,468  | 29                   | 11.71                |
@@ -103,7 +104,7 @@ Conversely, in weighted databases like ECommerce and Fruithut (from Table 2), wh
 
 In general, the performance analysis underscores RPS robust capability to handle both unweighted and weighted databases effectively. This versatility makes RPS a valuable approach for scalable stream data mining applications, emphasizing its reliability in maintaining efficient processing speeds while accommodating diverse database complexities.
 
-<tabcaption> Tab 3: *Average execution time per batch (in seconds) with different values of the damping factor (ε = {0.0, 0.1, 0.5}), the batch size (=1000), the reservoir size (1000, 2000, 3000), and maximal norm constraint maxNorm=10.*
+<tabcaption> *Tab 3: Average execution time per batch (in seconds) with different values of the damping factor (ε = {0.0, 0.1, 0.5}), the batch size (=1000), the reservoir size (1000, 2000, 3000), and maximal norm constraint maxNorm=10.*
 
 ![image](https://github.com/RPSampler/RPS/assets/172807587/f385a416-c8e0-44b2-802c-9f1eb5cf759a)
 
