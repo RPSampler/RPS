@@ -73,26 +73,41 @@ Fig 1. Impact of the reservoir and batch size on the speed
 </figcaption>
 
 
-### D.3. Experimental results for Itemset
+### D.3. Experimental results for unweighted Itemset and Weighted-Itemset
 
 <tabcaption> Tab 1: Our benchmark on Itemsets
 | Database           | \|D\|     | \|I\|   | \|\|γ\|\|<sub>max</sub>| \|\|γ\|\|<sub>avg</sub>  |
 |--------------------|-----------|--------|----------------------|----------------------|
-| OnlineRetail       | 541,909   | 2,603  | 8                    | 4.37                 |
+| ORetail       | 541,909   | 2,603  | 8                    | 4.37                 |
 | Kddcup99           | 1,000,000 | 135    | 16                   | 16                   |
 | PowerC             | 1,040,000 | 140    | 7                    | 7                    |
 | Susy               | 5,000,000 | 190    | 19                   | 19                   |
 </tabcaption>
 
-### D.4. Experimental results for Weighted-Itemset
-
-
 <tabcaption> Tab 2:benchmark on Weighted itemsets (For HUI and HAUI)
 | Database           | \|D\|     | \|I\|   | \|\|γ\|\|<sub>max</sub>| \|\|γ\|\|<sub>avg</sub> |
 |--------------------|-----------|--------|----------------------|----------------------|
 | ECommerce          | 14,975    | 3,468  | 29                   | 11.71                |
-| FruithutUI         | 181,970   | 1,265  | 36                   | 3.59                 |
-| ChainstoreUI       | 1,112,949 | 46,086 | 168                  | 7.23                 |
-| ChicagoCrimes      | 2,662,309 | 35     | 13                   | 1.79                 |
+| Fruithut         | 181,970   | 1,265  | 36                   | 3.59                 |
+| Chainstore       | 1,112,949 | 46,086 | 168                  | 7.23                 |
+| ChicagoC      | 2,662,309 | 35     | 13                   | 1.79                 |
 </tabcaption>
+
+
+
+**Performance analysis of RPS algorithm across itemset pattern language with diverse Database characteristics and parameter settings**
+
+The RPS algorithm demonstrates in Table 3 efficient performance across a spectrum of database characteristics, as illustrated by the findings from Tables 1 and 2. In unweighted databases such as ORetail and Kddcup99 (from Table 1), characterized by moderate to large transaction and item counts (\(|D|\) and \(|I|\)), RPS operates with commendably low execution times. This efficiency extends seamlessly to larger datasets, highlighting RPS ability to maintain rapid processing speeds even when handling extensive data volumes.
+
+Conversely, in weighted databases like ECommerce and Fruithut (from Table 2), which involve higher transaction volumes and intricate itemset calculations, RPS exhibits slightly longer execution times. Nevertheless, RPS consistently performs well, delivering manageable processing times across various parameter configurations, including scenarios with larger reservoir sizes and higher damping factors (ε).
+
+In general, the performance analysis underscores RPS robust capability to handle both unweighted and weighted databases effectively. This versatility makes RPS a valuable approach for scalable stream data mining applications, emphasizing its reliability in maintaining efficient processing speeds while accommodating diverse database complexities.
+
+<tabcaption> Tab 2:
+
+![image](https://github.com/RPSampler/RPS/assets/172807587/540bcde5-dfb9-428b-9248-70bf0d7e6a12)
+
+</tabcaption>
+
+
 
