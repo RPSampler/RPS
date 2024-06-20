@@ -98,14 +98,10 @@ Fig 1. Impact of the reservoir and batch size on the speed
 **Performance analysis of RPS algorithm across itemset pattern language with diverse Database characteristics and parameter settings**
 
 The RPS algorithm demonstrates in Table 3 efficient performance across a spectrum of database characteristics, as illustrated by the findings from Tables 1 and 2. In unweighted databases such as ORetail and Kddcup99 (from Table 1), characterized by moderate to large transaction and item counts (\(|D|\) and \(|I|\)), RPS operates with commendably low execution times. This efficiency extends seamlessly to larger datasets, highlighting RPS ability to maintain rapid processing speeds even when handling extensive data volumes.
-
 Conversely, in weighted databases like ECommerce and Fruithut (from Table 2), which involve higher transaction volumes and intricate itemset calculations, RPS exhibits slightly longer execution times. Nevertheless, RPS consistently performs well, delivering manageable processing times across various parameter configurations, including scenarios with larger reservoir sizes and higher damping factors (ε).
-
 In general, the performance analysis underscores RPS robust capability to handle both unweighted and weighted databases effectively. This versatility makes RPS a valuable approach for scalable stream data mining applications, emphasizing its reliability in maintaining efficient processing speeds while accommodating diverse database complexities.
 
-<tabcaption> Tab 2:
-
-![image](https://github.com/RPSampler/RPS/assets/172807587/540bcde5-dfb9-428b-9248-70bf0d7e6a12)
+<tabcaption> Tab 2: ![image](https://github.com/RPSampler/RPS/assets/172807587/540bcde5-dfb9-428b-9248-70bf0d7e6a12)
 
 </tabcaption>
 
