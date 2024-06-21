@@ -77,12 +77,12 @@ The following figure shows the behavior of RPS on different sequential databases
 These benchmarks contain real-world databases sourced from the SPMF repository (https://www.philippe-fournier-viger.com/spmf/index.php?link=datasets.php).
 
 <tabcaption> *Tab 1: Our benchmark on unweighted Itemsets*
-| Database           | \|D\|     | \|I\|   | \|\|γ\|\|<sub>max</sub>| \|\|γ\|\|<sub>avg</sub>  |
-|--------------------|-----------|--------|----------------------|----------------------|
-| ORetail       | 541,909   | 2,603  | 8                    | 4.37                 |
-| Kddcup99           | 1,000,000 | 135    | 16                   | 16                   |
-| PowerC             | 1,040,000 | 140    | 7                    | 7                    |
-| Susy               | 5,000,000 | 190    | 19                   | 19                   |
+| Database           | \|D\|     | \|I\|   | \|\|γ\|\|<sub>max</sub>| \|\|γ\|\|<sub>avg</sub>  | ResPat ($ε=0$)  | ResPat (ε=0.1$)  | ResPat ($ε=0.5$)      |RPS ($ε=0$)    |RPS ($ε=0.1$)    |RPS ($ε=0.5$)    |
+|--------------------|-----------|--------|----------------------|----------------------|----------------------|----------------------|----------------------|----------------------|----------------------|----------------------|
+| ORetail       | 541,909   | 2,603  | 8                    | 4.37                 |   2848.59 ± 0.95               |                  |                  |                  |                  |                  |
+| Kddcup99           | 1,000,000 | 135    | 16                   | 16                   |         --         |                  |                  |                  |                  |                  |
+| PowerC             | 1,040,000 | 140    | 7                    | 7                    |                  |                  |                  |                  |                  |                  |
+| Susy               | 5,000,000 | 190    | 19                   | 19                   |                  |                  |                  |                  |                  |                  |
 </tabcaption>
 
 <tabcaption> *Tab 2:benchmark on Weighted itemsets (For HUI and HAUI)*
