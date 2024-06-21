@@ -11,7 +11,7 @@ This repository introduces an innovative approach using weighted reservoir sampl
 - Supports multiple classifier models: `MultinomialNB`, `Perceptron`, `PassiveAggressiveClassifier`, `MLPClassifier`, `SGDClassifier`.
 - Handles complex data streams with `Sequence` and `Itemset` pattern languages.
 - Diverse utility measures `freq`, `area`, `decay`, `HUI`, `HAUI`. 
-- Configurable parameters including sample size, damping factor, batch size, learning and prediction durations, utility measures, and more.
+- Configurable parameters including sample size (reservoir size), damping factor, batch size, learning and prediction durations, utility measures, and more.
 - GUI for easy configuration and execution.
 - CLI for advanced users and scripting.
 
@@ -64,7 +64,7 @@ python3 RPS_runner_CLI.py --model_name MODEL_NAME --data_dir DATA_DIR [--sample_
 ![image](https://github.com/RPSampler/RPS/assets/172807587/63330266-8bbf-4d30-843c-71445672efa6)
 
 ### D.2. Additional experimental results for the sequential pattern language
-The following figure shows the behavior of RPS on different sequential databases as the reservoir size increases with different batch sizes. The experiments are repeated 5 times, and the standard deviations are tiny and not visible in the figure. While the reservoir size has a slight impact on the execution time, the batch size affects only the execution time per batch, not the overall execution time of the entire dataset. This is because RPS weights each instance independently of the batch it belongs to.
+The following figure shows the behavior of ${\bf RPS}$ on different sequential databases as the reservoir size increases with different batch sizes. The experiments are repeated 5 times, and the standard deviations are tiny and not visible in the figure. While the reservoir size has a slight impact on the execution time, the batch size affects only the execution time per batch, not the overall execution time of the entire dataset. This is because ${\bf RPS}$ weights each instance independently of the batch it belongs to.
 <figcaption>
   
 ![image](https://github.com/RPSampler/RPS/assets/172807587/035a237c-aa53-4beb-ab8f-03c7cb63ec32)
@@ -83,11 +83,11 @@ These benchmarks contain real-world databases sourced from the SPMF repository (
 |                    |           |         |                        |                          | $ε=0$ | $ε=0.1$ | $ε=0.5$ | $ε=0$ | $ε=0.1$ | $ε=0.5$ |
 | ORetail       | 541,909   | 2,603  | 8                    | 4.37                 |      $ $       |      $ $             |      $ $              |      $0.75 ± 0.01$   |      $4.24± 0.03 $   |   $6.33 ± 0.14$     |
 | Kddcup99           | 1,000,000 | 135    | 16                   | 16                   |         $ $        |         $ $           |         $ $           |       $1.53± 0.02$     |      $8.54 ±0.17 $  |      $14.05 ± 0.31$  |
-| PowerC             | 1,040,000 | 140    | 7                    | 7                    |  $248.52±0.94$     |       $ $             |         $ $           |        $1.35 ± 0.01$    |         $8.06 ± 0.05$    |   $12.91 ± 0.11$   |
+| PowerC             | 1,040,000 | 140    | 7                    | 7                    |  $248.52±0.94$     |       $-$             |         $ $           |        $1.35 ± 0.01$    |         $8.06 ± 0.05$    |   $12.91 ± 0.11$   |
 | Susy               | 5,000,000 | 190    | 19                   | 19                   |          $ $         |        $ $            |          $ $          |         $8.53 ±0.18$    |    $45.25 ± 0.48$   |    $77.86 ± 6.08$  |
 </tabcaption>
 
-The sixth last columns of *Tab 1* contain execution time comparisons between ${\bf ResPat}$ (Giacometti \& Soulet, ECML-PKDD'22) and our approach, ${\bf RPS}$. The experiments were repeated 5 times with different damping factors ($\epsilon = \{0.0, 0.1, 0.5\}$), a sample size of $N=10,000$ without norm constraint (i.e., $M=\infty$), and the standard deviations are reported. We set a maximal execution time of $\textbf{1 hour (3600 seconds)}$, and the symbol $(-)$ indicates that the approach exceeded the time limit (1 hour) for the corresponding dataset. As we can see, ${\bf ResPat}$ ..., while ${\bf RPS}$ needs ...
+The sixth last columns of *Tab 1* contain execution time comparisons between ${\bf ResPat}$ (Giacometti \& Soulet, ECML-PKDD'22) and our approach, ${\bf RPS}$. The experiments were repeated 5 times with different damping factors ($\epsilon = \{0.0, 0.1, 0.5\}$), a sample size of $k=10,000$ without norm constraint (i.e., $M=\infty$), and the standard deviations are reported. We set a maximal execution time of $\textbf{1 hour (3600 seconds)}$, and the symbol $(-)$ indicates that the approach exceeded the time limit (1 hour) for the corresponding dataset. As we can see, ${\bf ResPat}$ ..., while ${\bf RPS}$ needs ...
 
 
 <tabcaption> *Tab 2:benchmark on weighted itemsets (For HUI and HAUI)*
@@ -103,13 +103,13 @@ The sixth last columns of *Tab 1* contain execution time comparisons between ${\
 
 **Performance analysis of RPS algorithm across itemset pattern language with diverse Database characteristics and parameter settings**
 
-The RPS algorithm demonstrates in Table 3 efficient performance across a spectrum of database characteristics, as illustrated by the findings from Tables 1 and 2. In unweighted databases such as ORetail and Kddcup99 (from Table 1), characterized by moderate to large transaction and item counts (\(|D|\) and \(|I|\)), RPS operates with commendably low execution times. This efficiency extends seamlessly to larger datasets, highlighting RPS ability to maintain rapid processing speeds even when handling extensive data volumes.
+The ${\bf RPS}$ algorithm demonstrates in Table 3 efficient performance across a spectrum of database characteristics, as illustrated by the findings from Tables 1 and 2. In unweighted databases such as ORetail and Kddcup99 (from Table 1), characterized by moderate to large transaction and item counts ($\|{\cal D}\|$ ) and ($\|I\|$), ${\bf RPS}$ operates with commendably low execution times. This efficiency extends seamlessly to larger datasets, highlighting ${\bf RPS}$ ability to maintain rapid processing speeds even when handling extensive data volumes.
 
-Conversely, in weighted databases like ECommerce and Fruithut (from Table 2), which involve higher transaction volumes and intricate itemset calculations, RPS exhibits slightly longer execution times. Nevertheless, RPS consistently performs well, delivering manageable processing times across various parameter configurations, including scenarios with larger reservoir sizes and higher damping factors (ε).
+Conversely, in weighted databases like ECommerce and Fruithut (from Table 2), which involve higher transaction volumes and intricate itemset calculations, ${\bf RPS}$ exhibits slightly longer execution times. Nevertheless, ${\bf RPS}$ consistently performs well, delivering manageable processing times across various parameter configurations, including scenarios with larger reservoir sizes and higher damping factors ($ε$).
 
-In general, the performance analysis underscores RPS robust capability to handle both unweighted and weighted databases effectively. This versatility makes RPS a valuable approach for scalable stream data mining applications, emphasizing its reliability in maintaining efficient processing speeds while accommodating diverse database complexities.
+In general, the performance analysis underscores ${\bf RPS}$ robust capability to handle both unweighted and weighted databases effectively. This versatility makes ${\bf RPS}$ a valuable approach for scalable stream data mining applications, emphasizing its reliability in maintaining efficient processing speeds while accommodating diverse database complexities.
 
-<tabcaption> *Tab 3: Average execution time per batch (in seconds) with different values of the damping factor (ε = {0.0, 0.1, 0.5}), the batch size (=1000), the reservoir size (1000, 2000, 3000), and maximal norm constraint maxNorm=10.*
+<tabcaption> *Tab 3: Average execution time per batch (in seconds) with different values of the damping factor ($ε \in \{0.0, 0.1, 0.5\}$), the batch size ($=1000$), the reservoir size ($k \in \{1000, 2000, 3000\}$), and maximal norm constraint $M=10$.*
 
 ![image](https://github.com/RPSampler/RPS/assets/172807587/f385a416-c8e0-44b2-802c-9f1eb5cf759a)
 
