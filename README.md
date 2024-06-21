@@ -77,17 +77,14 @@ The following figure shows the behavior of ${\bf RPS}$ on different sequential d
 These benchmarks contain real-world databases sourced from the SPMF repository (https://www.philippe-fournier-viger.com/spmf/index.php?link=datasets.php). *Tab 1* contains unweighted itemset datasets, while *Tab 2* contains weighted itemsets for high utility itemsets (HUI) and high average-utility itemsets (HAUI) discovery.
 
 
-<tabcaption> *Tab 1: Our benchmark on unweighted Itemsets and some experimental results on the execution times without length constraint for* ${\bf ResPat}$ *(Giacometti \& Soulet, ECML-PKDD'22) and* ${\bf RPS}$
-| Database           | $\|{\cal D}\|$     | $\|I\|$   | $\|\|γ\|\|_{max}$ | $\|\|γ\|\|_{avg}$  | ${\bf ResPat}$ | ${\bf ResPat}$| ${\bf ResPat}$    |${\bf RPS}$    |${\bf RPS}$     |${\bf RPS}$     |
-|--------------------|-----------|--------|----------------------|----------------------|----------------------|----------------------|---------|--------|--------|-----------------|
-|                    |           |         |                        |                          | $ε=0$ | $ε=0.1$ | $ε=0.5$ | $ε=0$ | $ε=0.1$ | $ε=0.5$ |
-| ORetail       | 541,909   | 2,603  | 8                    | 4.37                 |      $190.30±0.69$       |      $2650.79±26.85$             |      $255.26±0.11$              |      $0.75 ± 0.01$   |      $4.24± 0.03 $   |   $6.33 ± 0.14$     |
-| Kddcup99           | 1,000,000 | 135    | 16                   | 16                   |         $412.28±0.56$        |         $-$           |         $-$           |       $1.53± 0.02$     |      $8.54 ±0.17 $  |      $14.05 ± 0.31$  |
-| PowerC             | 1,040,000 | 140    | 7                    | 7                    |  $248.52±0.94$     |       $-$             |         $2,233.44±14.94$           |        $1.35 ± 0.01$    |         $8.06 ± 0.05$    |   $12.91 ± 0.11$   |
-| Susy               | 5,000,000 | 190    | 19                   | 19                   |          $513.37±2.16$         |        $-$            |          $-$          |         $8.53 ±0.18$    |    $45.25 ± 0.48$   |    $77.86 ± 6.08$  |
+<tabcaption> *Tab 1: Our benchmark on unweighted Itemsets$
+| Database | $\|{\cal D}\|$ | $\|I\|$ | $\|\|γ\|\|_{max}$ | $\|\|γ\|\|_{avg}$ |
+|----------|----------------|---------|-------------------|-------------------|
+| ORetail  | 541,909        | 2,603   | 8                 | 4.37              |
+| Kddcup99 | 1,000,000      | 135     | 16                | 16                |
+| PowerC   | 1,040,000      | 140     | 7                 | 7                 |
+| Susy     | 5,000,000      | 190     | 19                | 19                |
 </tabcaption>
-
-The sixth last columns of *Tab 1* contain execution time comparisons between ${\bf ResPat}$ (Giacometti \& Soulet, ECML-PKDD'22) and our approach, ${\bf RPS}$. The experiments were repeated 5 times with different damping factors ($\epsilon = \\{0.0, 0.1, 0.5 \\}$), a sample size of $k=10,000$ without norm constraint (i.e., $M=\infty$), and the standard deviations are reported. We set a maximal execution time of $\textbf{1 hour (3600 seconds)}$, and the symbol $(-)$ indicates that the approach exceeded the time limit (1 hour) for the corresponding dataset. As we can see, ${\bf ResPat}$ ..., while ${\bf RPS}$ needs ...
 
 
 <tabcaption> *Tab 2:benchmark on weighted itemsets (For HUI and HAUI)*
@@ -114,7 +111,19 @@ In general, the performance analysis underscores ${\bf RPS}$ robust capability t
 ![image](https://github.com/RPSampler/RPS/assets/172807587/f385a416-c8e0-44b2-802c-9f1eb5cf759a)
 
 
+<tabcaption> *Tab 3: Experimental results on the execution times without length constraint for* ${\bf ResPat}$ *(Giacometti \& Soulet, ECML-PKDD'22) and* ${\bf RPS}$
+| Database  | ${\bf ResPat}$ $(ε=0)$ | ${\bf ResPat}$ $(ε=0.1)$ | ${\bf ResPat}$ $(ε=0.5)$ | ${\bf RPS}$ $(ε=0)$ | ${\bf RPS}$ $(ε=0.1)$ | ${\bf RPS}$ $(ε=0.5)$ |
+|-----------|------------------------|--------------------------|-------------------------|---------------------|-----------------------|-----------------------|
+| ORetail   | $190.30 \pm 0.69$      | $2,650.79 \pm 26.85$      | $255.26 \pm 0.11$       | $0.75 \pm 0.01$     | $4.24 \pm 0.03$       | $6.33 \pm 0.14$       |
+| Kddcup99  | $412.28 \pm 0.56$      | $-$                      | $-$                     | $1.53 \pm 0.02$     | $8.54 \pm 0.17$       | $14.05 \pm 0.31$      |
+| PowerC    | $248.52 \pm 0.94$      | $-$                      | $2,233.44 \pm 14.94$     | $1.35 \pm 0.01$     | $8.06 \pm 0.05$       | $12.91 \pm 0.11$      |
+| Susy      | $513.37 \pm 2.16$      | $-$                      | $-$                     | $8.53 \pm 0.18$     | $45.25 \pm 0.48$      | $77.86 \pm 6.08$      |
 </tabcaption>
+
+
+*Tab 3* contains execution time comparisons between ${\bf ResPat}$ (Giacometti \& Soulet, ECML-PKDD'22) and our approach, ${\bf RPS}$. The experiments were repeated 5 times with different damping factors ($\epsilon = \\{0.0, 0.1, 0.5 \\}$), a sample size of $k=10,000$ without norm constraint (i.e., $M=\infty$), and the standard deviations are reported. We set a maximal execution time of $\textbf{1 hour (3600 seconds)}$, and the symbol $(-)$ indicates that the approach exceeded the time limit (1 hour) for the corresponding dataset. As we can see, ${\bf ResPat}$ ..., while ${\bf RPS}$ needs ...
+
+
 
 
 
