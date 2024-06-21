@@ -88,7 +88,7 @@ These benchmarks contain real-world databases sourced from the SPMF repository (
 </tabcaption>
 
 <tabcaption> *Tab 2:benchmark on Weighted itemsets (For HUI and HAUI)*
-| Database           | \|D\|     | \|I\|   | $\|\|γ\|\|_{max}$ | $\|\|γ\|\|_{avg}$ |
+| Database           | $\|{\cal D}\|$     | $\|I\|$   | $\|\|γ\|\|_{max}$ | $\|\|γ\|\|_{avg}$ |
 |--------------------|-----------|--------|----------------------|----------------------|
 | ECommerce          | 14,975    | 3,468  | 29                   | 11.71                |
 | Fruithut         | 181,970   | 1,265  | 36                   | 3.59                 |
