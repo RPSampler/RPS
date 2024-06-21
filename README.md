@@ -98,7 +98,7 @@ These benchmarks contain real-world databases sourced from the SPMF repository (
 
 
 
-**Performance analysis of RPS algorithm across itemset pattern language with diverse Database characteristics and parameter settings**
+**a) Performance analysis of RPS algorithm across itemset pattern language with diverse Database characteristics and parameter settings**
 
 The ${\bf RPS}$ algorithm demonstrates in Table 3 efficient performance across a spectrum of database characteristics, as illustrated by the findings from Tables 1 and 2. In unweighted databases such as ORetail and Kddcup99 (from Table 1), characterized by moderate to large transaction and item counts ($\|{\cal D}\|$) and ($\|I\|$), ${\bf RPS}$ operates with commendably low execution times. This efficiency extends seamlessly to larger datasets, highlighting ${\bf RPS}$ ability to maintain rapid processing speeds even when handling extensive data volumes.
 
@@ -111,7 +111,9 @@ In general, the performance analysis underscores ${\bf RPS}$ robust capability t
 ![image](https://github.com/RPSampler/RPS/assets/172807587/f385a416-c8e0-44b2-802c-9f1eb5cf759a)
 
 
-<tabcaption> *Tab 3: Experimental results on the execution times without length constraint for* ${\bf ResPat}$ *(Giacometti \& Soulet, ECML-PKDD'22) and* ${\bf RPS}$
+**b) Speed comparison between ${\bf ResPat}$ *(Giacometti \& Soulet, ECML-PKDD'22) and* ${\bf RPS}$ on unweighted itemsets databases**
+
+<tabcaption> *Tab 3: Experimental results on the execution times without length constraint for* ${\bf ResPat}$ *and* ${\bf RPS}$
 | Database  | ${\bf ResPat}$ $(ε=0)$ | ${\bf ResPat}$ $(ε=0.1)$ | ${\bf ResPat}$ $(ε=0.5)$ | ${\bf RPS}$ $(ε=0)$ | ${\bf RPS}$ $(ε=0.1)$ | ${\bf RPS}$ $(ε=0.5)$ |
 |-----------|------------------------|--------------------------|-------------------------|---------------------|-----------------------|-----------------------|
 | ORetail   | $190.30 \pm 0.69$      | $2,650.79 \pm 26.85$      | $255.26 \pm 0.11$       | $0.75 \pm 0.01$     | $4.24 \pm 0.03$       | $6.33 \pm 0.14$       |
