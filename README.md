@@ -103,13 +103,13 @@ The sixth last columns of *Tab 1* contain execution time comparisons between ${\
 
 **Performance analysis of RPS algorithm across itemset pattern language with diverse Database characteristics and parameter settings**
 
-The ${\bf RPS}$ algorithm demonstrates in Table 3 efficient performance across a spectrum of database characteristics, as illustrated by the findings from Tables 1 and 2. In unweighted databases such as ORetail and Kddcup99 (from Table 1), characterized by moderate to large transaction and item counts ($\|{\cal D}\|$ ) and ($\|I\|$), ${\bf RPS}$ operates with commendably low execution times. This efficiency extends seamlessly to larger datasets, highlighting ${\bf RPS}$ ability to maintain rapid processing speeds even when handling extensive data volumes.
+The ${\bf RPS}$ algorithm demonstrates in Table 3 efficient performance across a spectrum of database characteristics, as illustrated by the findings from Tables 1 and 2. In unweighted databases such as ORetail and Kddcup99 (from Table 1), characterized by moderate to large transaction and item counts ($\|{\cal D}\|$) and ($\|I\|$), ${\bf RPS}$ operates with commendably low execution times. This efficiency extends seamlessly to larger datasets, highlighting ${\bf RPS}$ ability to maintain rapid processing speeds even when handling extensive data volumes.
 
 Conversely, in weighted databases like ECommerce and Fruithut (from Table 2), which involve higher transaction volumes and intricate itemset calculations, ${\bf RPS}$ exhibits slightly longer execution times. Nevertheless, ${\bf RPS}$ consistently performs well, delivering manageable processing times across various parameter configurations, including scenarios with larger reservoir sizes and higher damping factors ($ε$).
 
 In general, the performance analysis underscores ${\bf RPS}$ robust capability to handle both unweighted and weighted databases effectively. This versatility makes ${\bf RPS}$ a valuable approach for scalable stream data mining applications, emphasizing its reliability in maintaining efficient processing speeds while accommodating diverse database complexities.
 
-<tabcaption> *Tab 3: Average execution time per batch (in seconds) with different values of the damping factor ($ε \in \{0.0, 0.1, 0.5\}$), the batch size ($=1000$), the reservoir size ($k \in \{1000, 2000, 3000\}$), and maximal norm constraint $M=10$.*
+<tabcaption> *Tab 3: Average execution time per batch (in seconds) with different values of the damping factor* ($ ε \in \{0.0, 0.1, 0.5\} $), *the batch size* ($ =1000 $), *the reservoir size* ($k \in \{1000, 2000, 3000\}$), *and maximal norm constraint* $M=10$.
 
 ![image](https://github.com/RPSampler/RPS/assets/172807587/f385a416-c8e0-44b2-802c-9f1eb5cf759a)
 
