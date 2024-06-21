@@ -74,7 +74,7 @@ The following figure shows the behavior of RPS on different sequential databases
 
 
 ### D.3. Experimental results for unweighted Itemset and Weighted-Itemset
-These benchmarks contain real-world databases sourced from the SPMF repository (https://www.philippe-fournier-viger.com/spmf/index.php?link=datasets.php). The sixth last columns contain execution time comparisons between ${\bf ResPat}$ (Giacometti \& Soulet, ECML-PKDD'22) and our approach, ${\bf RPS}$. The experiments were repeated 5 times with different damping factors ($\epsilon = \{0.0, 0.1, 0.5\}$), a sample size of $N=10,000$ without norm constraint (i.e., $M=\infty$), and the standard deviations are reported. We set a maximal execution time of \textbf{1 hour (3600 seconds)}, and the symbol $(-)$ indicates that the approach exceeded the time limit (1 hour) for the corresponding dataset. As we can see, ${\bf ResPat}$ ..., while ${\bf RPS}$ needs ...
+These benchmarks contain real-world databases sourced from the SPMF repository (https://www.philippe-fournier-viger.com/spmf/index.php?link=datasets.php). *Tab 1* contains unweighted itemset datasets, while *Tab 2* contains weighted itemsets for high utility itemsets (HUI) and high average-utility itemsets (HAUI) discovery.
 
 
 <tabcaption> *Tab 1: Our benchmark on unweighted Itemsets*
@@ -87,7 +87,10 @@ These benchmarks contain real-world databases sourced from the SPMF repository (
 | Susy               | 5,000,000 | 190    | 19                   | 19                   |          $ $         |        $ $            |          $ $          |         $8.53 ±0.18$    |    $45.25 ± 0.48$   |    $77.86 ± 6.08$  |
 </tabcaption>
 
-<tabcaption> *Tab 2:benchmark on Weighted itemsets (For HUI and HAUI)*
+The sixth last columns of *Tab 1* contain execution time comparisons between ${\bf ResPat}$ (Giacometti \& Soulet, ECML-PKDD'22) and our approach, ${\bf RPS}$. The experiments were repeated 5 times with different damping factors ($\epsilon = \{0.0, 0.1, 0.5\}$), a sample size of $N=10,000$ without norm constraint (i.e., $M=\infty$), and the standard deviations are reported. We set a maximal execution time of \textbf{1 hour (3600 seconds)}, and the symbol $(-)$ indicates that the approach exceeded the time limit (1 hour) for the corresponding dataset. As we can see, ${\bf ResPat}$ ..., while ${\bf RPS}$ needs ...
+
+
+<tabcaption> *Tab 2:benchmark on weighted itemsets (For HUI and HAUI)*
 | Database           | $\|{\cal D}\|$     | $\|I\|$   | $\|\|γ\|\|_{max}$ | $\|\|γ\|\|_{avg}$ |
 |--------------------|-----------|--------|----------------------|----------------------|
 | ECommerce          | 14,975    | 3,468  | 29                   | 11.71                |
