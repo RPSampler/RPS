@@ -77,13 +77,13 @@ The following figure shows the behavior of RPS on different sequential databases
 These benchmarks contain real-world databases sourced from the SPMF repository (https://www.philippe-fournier-viger.com/spmf/index.php?link=datasets.php).
 
 <tabcaption> *Tab 1: Our benchmark on unweighted Itemsets*
-| Database           | $\|{\cal D}\|$     | $\|I\|$   | $\|\|γ\|\|_{max}$ | $\|\|γ\|\|_{avg}$  | \multicolumn{3}{c}{ResPat}     |RPS    |RPS     |RPS     |
+| Database           | $\|{\cal D}\|$     | $\|I\|$   | $\|\|γ\|\|_{max}$ | $\|\|γ\|\|_{avg}$  | ResPat | ResPat| ResPat    |RPS    |RPS     |RPS     |
 |--------------------|-----------|--------|----------------------|----------------------|----------------------|----------------------|----------------------|----------------------|----------------------|----------------------|
 |                    |           |         |                        |                          | $ε=0$ | $ε=0.1$ | $ε=0.5$ | $ε=0$ | $ε=0.1$ | $ε=0.5$ |
-| ORetail       | 541,909   | 2,603  | 8                    | 4.37                 |   2848.59 ± 0.95               |                  |                  |                  |                  |                  |
-| Kddcup99           | 1,000,000 | 135    | 16                   | 16                   |         --         |                  |                  |                  |                  |                  |
-| PowerC             | 1,040,000 | 140    | 7                    | 7                    |                  |                  |                  |                  |                  |                  |
-| Susy               | 5,000,000 | 190    | 19                   | 19                   |                  |                  |                  |                  |                  |                  |
+| ORetail       | 541,909   | 2,603  | 8                    | 4.37                 |   2848.59 ± 0.95          |      $-$             |      $-$             |                  |                  |                  |
+| Kddcup99           | 1,000,000 | 135    | 16                   | 16                   |         $-$        |         $-$          |         $-$          |                  |                  |                  |
+| PowerC             | 1,040,000 | 140    | 7                    | 7                    |          $-$         |       $-$            |         $-$          |                  |                  |                  |
+| Susy               | 5,000,000 | 190    | 19                   | 19                   |          $-$         |        $-$           |          $-$         |                  |                  |                  |
 </tabcaption>
 
 <tabcaption> *Tab 2:benchmark on Weighted itemsets (For HUI and HAUI)*
