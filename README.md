@@ -77,7 +77,7 @@ The following figure shows the behavior of ${\bf RPS}$ on different sequential d
 These benchmarks contain real-world databases sourced from the SPMF repository (https://www.philippe-fournier-viger.com/spmf/index.php?link=datasets.php). *Tab 1* contains unweighted itemset datasets, while *Tab 2* contains weighted itemsets for high utility itemsets (HUI) and high average-utility itemsets (HAUI) discovery.
 
 
-<tabcaption> *Tab 1: Our benchmark on unweighted Itemsets and some experimental results on the execution time without length constraint for ${\bf ResPat}$  and ${\bf RPS}$*
+<tabcaption> *Tab 1: Our benchmark on unweighted Itemsets and some experimental results on the execution times without length constraint for* ${\bf ResPat}$ *((Giacometti \& Soulet, ECML-PKDD'22) and* ${\bf RPS}$
 | Database           | $\|{\cal D}\|$     | $\|I\|$   | $\|\|γ\|\|_{max}$ | $\|\|γ\|\|_{avg}$  | ${\bf ResPat}$ | ${\bf ResPat}$| ${\bf ResPat}$    |${\bf RPS}$    |${\bf RPS}$     |${\bf RPS}$     |
 |--------------------|-----------|--------|----------------------|----------------------|----------------------|----------------------|---------|--------|--------|-----------------|
 |                    |           |         |                        |                          | $ε=0$ | $ε=0.1$ | $ε=0.5$ | $ε=0$ | $ε=0.1$ | $ε=0.5$ |
