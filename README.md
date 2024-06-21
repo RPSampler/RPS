@@ -74,16 +74,17 @@ The following figure shows the behavior of RPS on different sequential databases
 
 
 ### D.3. Experimental results for unweighted Itemset and Weighted-Itemset
-These benchmarks contain real-world databases sourced from the SPMF repository (https://www.philippe-fournier-viger.com/spmf/index.php?link=datasets.php).
+These benchmarks contain real-world databases sourced from the SPMF repository (https://www.philippe-fournier-viger.com/spmf/index.php?link=datasets.php). The sixth last columns contain execution time comparisons between ${\bf ResPat}$ (Giacometti \& Soulet, ECML-PKDD'22) and our approach, ${\bf RPS}$. The experiments were repeated 5 times with different damping factors ($\epsilon = \{0.0, 0.1, 0.5\}$), a sample size of $N=1,000$ without norm constraint (i.e., $M=\infty$), and the standard deviations are reported. We set a maximal execution time of \textbf{1 hour (3600 seconds)}, and the symbol $(-)$ indicates that the approach exceeded the time limit (1 hour) for the corresponding dataset. As we can see, ${\bf ResPat}$ reaches the time limit for all cases except on ORetail with a damping factor of $\epsilon=0$, where it takes $2,848.59 \pm 0.95$ seconds, while ${\bf RPS}$ needs only  $0.72 ± 0.01$ seconds in the same case.
+
 
 <tabcaption> *Tab 1: Our benchmark on unweighted Itemsets*
-| Database           | $\|{\cal D}\|$     | $\|I\|$   | $\|\|γ\|\|_{max}$ | $\|\|γ\|\|_{avg}$  | ResPat | ResPat| ResPat    |RPS    |RPS     |RPS     |
-|--------------------|-----------|--------|----------------------|----------------------|----------------------|----------------------|----------------------|----------------------|----------------------|----------------------|
+| Database           | $\|{\cal D}\|$     | $\|I\|$   | $\|\|γ\|\|_{max}$ | $\|\|γ\|\|_{avg}$  | ${\bf ResPat}$ | ${\bf ResPat}$| ${\bf ResPat}$    |${\bf RPS}$    |${\bf RPS}$     |${\bf RPS}$     |
+|--------------------|-----------|--------|----------------------|----------------------|----------------------|----------------------|---------|--------|--------|-----------------|
 |                    |           |         |                        |                          | $ε=0$ | $ε=0.1$ | $ε=0.5$ | $ε=0$ | $ε=0.1$ | $ε=0.5$ |
-| ORetail       | 541,909   | 2,603  | 8                    | 4.37                 |   2848.59 ± 0.95          |      $-$             |      $-$             |                  |                  |                  |
-| Kddcup99           | 1,000,000 | 135    | 16                   | 16                   |         $-$        |         $-$          |         $-$          |                  |                  |                  |
-| PowerC             | 1,040,000 | 140    | 7                    | 7                    |          $-$         |       $-$            |         $-$          |                  |                  |                  |
-| Susy               | 5,000,000 | 190    | 19                   | 19                   |          $-$         |        $-$           |          $-$         |                  |                  |                  |
+| ORetail       | 541,909   | 2,603  | 8                    | 4.37                 |   $2,848.59 ± 0.95$         |      $-$             |      $-$             |      $0.72 ± 0.01$   |      $4.14± 0.043 $   |   $4.28 ± 0.03$     |
+| Kddcup99           | 1,000,000 | 135    | 16                   | 16                   |         $-$        |         $-$          |         $-$          |       $1.50± 0.02$     |      $7.88 ±0.16 $  |      $8.72 ± 0.09$  |
+| PowerC             | 1,040,000 | 140    | 7                    | 7                    |          $-$         |       $-$            |         $-$          |        $1.32 ± 0.01$    |         $7.72 ± 0.03$    |   $8.41 ± 0.02$   |
+| Susy               | 5,000,000 | 190    | 19                   | 19                   |          $-$         |        $-$           |          $-$         |         $8.02 ±0.06$    |    $41.7 ± 0.49$   |    $47.34 ± 0.82$  |
 </tabcaption>
 
 <tabcaption> *Tab 2:benchmark on Weighted itemsets (For HUI and HAUI)*
