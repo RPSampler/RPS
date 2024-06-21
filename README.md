@@ -87,7 +87,7 @@ These benchmarks contain real-world databases sourced from the SPMF repository (
 | Susy               | 5,000,000 | 190    | 19                   | 19                   |          $ $         |        $ $            |          $ $          |         $8.53 ±0.18$    |    $45.25 ± 0.48$   |    $77.86 ± 6.08$  |
 </tabcaption>
 
-The sixth last columns of *Tab 1* contain execution time comparisons between ${\bf ResPat}$ (Giacometti \& Soulet, ECML-PKDD'22) and our approach, ${\bf RPS}$. The experiments were repeated 5 times with different damping factors ($\epsilon = \{0.0, 0.1, 0.5\}$), a sample size of $k=10,000$ without norm constraint (i.e., $M=\infty$), and the standard deviations are reported. We set a maximal execution time of $\textbf{1 hour (3600 seconds)}$, and the symbol $(-)$ indicates that the approach exceeded the time limit (1 hour) for the corresponding dataset. As we can see, ${\bf ResPat}$ ..., while ${\bf RPS}$ needs ...
+The sixth last columns of *Tab 1* contain execution time comparisons between ${\bf ResPat}$ (Giacometti \& Soulet, ECML-PKDD'22) and our approach, ${\bf RPS}$. The experiments were repeated 5 times with different damping factors ($\epsilon = \\{0.0, 0.1, 0.5 \\}$), a sample size of $k=10,000$ without norm constraint (i.e., $M=\infty$), and the standard deviations are reported. We set a maximal execution time of $\textbf{1 hour (3600 seconds)}$, and the symbol $(-)$ indicates that the approach exceeded the time limit (1 hour) for the corresponding dataset. As we can see, ${\bf ResPat}$ ..., while ${\bf RPS}$ needs ...
 
 
 <tabcaption> *Tab 2:benchmark on weighted itemsets (For HUI and HAUI)*
@@ -109,7 +109,7 @@ Conversely, in weighted databases like ECommerce and Fruithut (from Table 2), wh
 
 In general, the performance analysis underscores ${\bf RPS}$ robust capability to handle both unweighted and weighted databases effectively. This versatility makes ${\bf RPS}$ a valuable approach for scalable stream data mining applications, emphasizing its reliability in maintaining efficient processing speeds while accommodating diverse database complexities.
 
-<tabcaption> *Tab 3: Average execution time per batch (in seconds) with different values of the damping factor* ($ε \in \\{ 0.0, 0.1, 0.5 \\}$), *the batch size* ($=1000$), *the reservoir size* ($k \in \{ 1000, 2000, 3000 \}$), *and maximal norm constraint* $M=10$.
+<tabcaption> *Tab 3: Average execution time per batch (in seconds) with different values of the damping factor* ($ε \in \\{ 0.0, 0.1, 0.5 \\}$), *the batch size* ($=1000$), *the reservoir size* ($k \in \\{ 1000, 2000, 3000 \\}$), *and maximal norm constraint* $M=10$.
 
 ![image](https://github.com/RPSampler/RPS/assets/172807587/f385a416-c8e0-44b2-802c-9f1eb5cf759a)
 
