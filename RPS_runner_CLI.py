@@ -25,7 +25,7 @@ def run_all(model, streamdata, sample_size, dampingFactor, utilityMeasure, maxNo
          alpha=alpha,
          patternLanguage=patternLanguage,
          batchsize=batchsize,
-         labled=labled,
+         labled=(labled.upper()=="Y"),
          weightedItems=weightedItems,
          classification=("Y" == classification_task.upper()),
          predict_duration=predict_duration,
