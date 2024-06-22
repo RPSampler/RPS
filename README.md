@@ -113,14 +113,14 @@ In general, the performance analysis underscores ${\bf RPS}$ robust capability t
 
 **b) Speed comparison between ${\bf ResPat}$ *(Giacometti \& Soulet, ECML-PKDD'22) and* ${\bf RPS}$ on unweighted itemsets databases**
 
-<caption> *Tab 3: Experimental results on the execution times without length constraint for* ${\bf ResPat}$ *and* ${\bf RPS}$</caption>
+<tabcaption> *Tab 3: Experimental results on the execution times without length constraint for* ${\bf ResPat}$ *and* ${\bf RPS}$
 | Database  | ${\bf ResPat}$ $(ε=0)$ | ${\bf ResPat}$ $(ε=0.1)$ | ${\bf ResPat}$ $(ε=0.5)$ | ${\bf RPS}$ $(ε=0)$ | ${\bf RPS}$ $(ε=0.1)$ | ${\bf RPS}$ $(ε=0.5)$ |
 |-----------|------------------------|--------------------------|-------------------------|---------------------|-----------------------|-----------------------|
 | ORetail   | $190.30 \pm 0.69$      | $2,650.79 \pm 26.85$      | $255.26 \pm 0.11$       | $0.75 \pm 0.01$     | $4.24 \pm 0.03$       | $6.33 \pm 0.14$       |
 | Kddcup99  | $412.28 \pm 0.56$      | $-$                      | $-$                     | $1.53 \pm 0.02$     | $8.54 \pm 0.17$       | $14.05 \pm 0.31$      |
 | PowerC    | $248.52 \pm 0.94$      | $-$                      | $2,233.44 \pm 14.94$     | $1.35 \pm 0.01$     | $8.06 \pm 0.05$       | $12.91 \pm 0.11$      |
 | Susy      | $513.37 \pm 2.16$      | $-$                      | $-$                     | $8.53 \pm 0.18$     | $45.25 \pm 0.48$      | $77.86 \pm 6.08$      |
-
+</tabcaption>
 
 
 *Tab 3* contains execution time comparisons between ${\bf ResPat}$ (Giacometti \& Soulet, ECML-PKDD'22) and our approach, ${\bf RPS}$. The experiments were repeated 5 times with different damping factors ($\epsilon = \\{0.0, 0.1, 0.5 \\}$), a sample size of $k=10,000$ without norm constraint (i.e., $M=\infty$), and the standard deviations are reported. We set a maximal execution time of $\textbf{1 hour (3600 seconds)}$, and the symbol $(-)$ indicates that the approach exceeded the time limit (1 hour) for the corresponding dataset. As we can see, ${\bf ResPat}$ ..., while ${\bf RPS}$ needs ...
