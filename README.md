@@ -113,7 +113,7 @@ In general, the performance analysis underscores ${\bf RPS}$ robust capability t
 
 **b) Speed comparison between ${\bf 2-Step}$ *(Boley et al.,KDD'11)*, ${\bf ResPat}$ *(Giacometti \& Soulet, ECML-PKDD'22) and* ${\bf RPS}$ on unweighted itemsets databases**
 
-*Tab 3* contains execution time comparisons between ${\bf 2-Step}$ *(Boley et al.,KDD'11)*, ${\bf ResPat}$ (Giacometti \& Soulet, ECML-PKDD'22) and our approach, ${\bf RPS}$. The experiments were repeated 5 times with different damping factors ($\epsilon = \\{0.0, 0.1, 0.5 \\}$), a sample size of $k=10,000$ without norm constraint (i.e., $M=\infty$), and the standard deviations are reported. We set a maximal execution time of $\textbf{1 hour (3600 seconds)}$, and the symbol $(-)$ indicates that the approach exceeded the time limit (1 hour) for the corresponding dataset. We set "oom" for out of memory when the data cannot be processed by the corresponding approach.
+*Tab 3* contains execution time comparisons between ${\bf 2-Step}$ *(Boley et al.,KDD'11)*, ${\bf ResPat}$ (Giacometti \& Soulet, ECML-PKDD'22) and our approach, ${\bf RPS}$. The experiments were repeated 5 times with different damping factors ($\epsilon = \\{0.0, 0.1, 0.5 \\}$), a sample size of $k=10,000$ without norm constraint (i.e., $M=\infty$), and the standard deviations are reported. We set a maximal execution time of $\textbf{1 hour (3600 seconds)}$, and the symbol $(-)$ indicates that the approach exceeded the time limit (1 hour) for the corresponding dataset. We set "*oom*" for out of memory when the data cannot be processed by the corresponding approach.
 
 <tabcaption> *Tab 3: Experimental results on the execution times without length constraint for* ${\bf ResPat}$ *and* ${\bf RPS}$
 | Database  | ${\bf 2-Step}$ | ${\bf ResPat}(ε=0)$ | ${\bf ResPat}(ε=0.1)$ | ${\bf ResPat}(ε=0.5)$ | ${\bf RPS}(ε=0)$ | ${\bf RPS}(ε=0.1)$ | ${\bf RPS}(ε=0.5)$ |
@@ -124,7 +124,15 @@ In general, the performance analysis underscores ${\bf RPS}$ robust capability t
 | Susy      | $oom$             | $513.37 \pm 2.16$      | $-$                      | $-$                     | $8.53 \pm 0.18$     | $45.25 \pm 0.48$      | $77.86 \pm 6.08$      |
 </tabcaption>
 
-As we can see, ${\bf ResPat}$ ..., while ${\bf RPS}$ needs ...
+Upon examining the results presented in Table 3, it is evident that the ${\bf RPS}$ approach demonstrates superior performance and versatility compared to both ${\bf 2-Step}$ and ${\bf ResPat}$ methods across all damping factors.
+
+For the damping factor of 0 (ε=0), ${\bf RPS}$ consistently outperforms ${\bf ResPat}$ in terms of execution times for all datasets. Specifically, ${\bf RPS}$ processes the ORetail, Kddcup99, PowerC, and Susy datasets in $0.75 \pm 0.01$, $1.53 \pm 0.02$, $1.35 \pm 0.01$, and $8.53 \pm 0.18$ seconds, respectively. In contrast, ${\bf ResPat}$ takes $190.30 \pm 0.69$, $412.28 \pm 0.56$, $248.52 \pm 0.94$, and $513.37 \pm 2.16$ seconds, respectively, for the same datasets. Moreover, ${\bf RPS}$ successfully handles the Susy dataset, where ${\bf 2-Step}$ fails due to an out-of-memory error, highlighting ${\bf RPS}$'s ability to manage larger datasets efficiently.
+
+When the damping factor is set to 0.1 (ε=0.1), ${\bf RPS}$ continues to exhibit shorter execution times compared to ${\bf ResPat}$ for all datasets. In this case, ${\bf RPS}$ completes the processing of the ORetail, Kddcup99, PowerC, and Susy datasets in $4.24 \pm 0.03$, $8.54 \pm 0.17$, $8.06 \pm 0.05$, and $45.25 \pm 0.48$ seconds, respectively. Meanwhile, ${\bf ResPat}$ exceeds the 1-hour time limit for the Kddcup99 and PowerC datasets and takes $2,650.79 \pm 26.85$ seconds for the ORetail dataset. Again, ${\bf RPS}$ proves to be more efficient in handling larger datasets that ${\bf ResPat}$ struggles with.
+
+Lastly, for the damping factor of 0.5 (ε=0.5), ${\bf RPS}$ maintains its advantage over ${\bf ResPat}$ in terms of execution times. ${\bf RPS}$ processes the ORetail, Kddcup99, PowerC, and Susy datasets in $6.33 \pm 0.14$, $14.05 \pm 0.31$, $12.91 \pm 0.11$, and $77.86 \pm 6.08$ seconds, respectively. ${\bf ResPat}$, on the other hand, exceeds the 1-hour time limit for the Kddcup99 and Susy datasets and takes $255.26 \pm 0.11$ and $2,233.44 \pm 14.94$ seconds for the ORetail and PowerC datasets, respectively.
+
+In summary, the ${\bf RPS}$ approach consistently outperforms ${\bf ResPat}$ across all damping factors and datasets, demonstrating its efficiency and scalability. Furthermore, ${\bf RPS}$ effectively handles larger datasets, such as Susy, that ${\bf 2-Step}$ cannot process due to memory constraints. These findings underscore the robustness and adaptability of the ${\bf RPS}$ approach for various datasets and damping factor settings.
 
 
 
