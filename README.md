@@ -77,7 +77,7 @@ The following figure shows the behavior of ${\bf RPS}$ on different sequential d
 These benchmarks contain real-world databases sourced from the SPMF repository (https://www.philippe-fournier-viger.com/spmf/index.php?link=datasets.php). *Tab 1* contains unweighted itemset datasets, while *Tab 2* contains weighted itemsets for high utility itemsets (HUI) and high average-utility itemsets (HAUI) discovery.
 
 
-<tabcaption> *Tab 1: Our benchmark on unweighted Itemsets$
+<tabcaption> *Tab 1: Our benchmark on unweighted Itemsets*
 | Database | $\|{\cal D}\|$ | $\|I\|$ | $\|\|γ\|\|_{max}$ | $\|\|γ\|\|_{avg}$ |
 |----------|----------------|---------|-------------------|-------------------|
 | ORetail  | 541,909        | 2,603   | 8                 | 4.37              |
