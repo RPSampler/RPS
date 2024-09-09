@@ -41,6 +41,11 @@ python3 RPS_runner_CLI.py --model_name MODEL_NAME --data_dir DATA_DIR [--sample_
 
 #### NB: It is also possible to run RPS_runner_CLI.py without arguments and change the default values step by step if needed.
 
+
+#### Important remarks:
+- *--alphaDecay* is used only with *--utilityMeasure = decay*. For example, *python3 RPS_runner_CLI.py --model_name MultinomialNB --data_dir Benchmark/Sequence/Books.num --sample_size 10000 --dampingFactor 0.1 --batchsize 1000 --learning_duration 5 --predict_duration 20 --utilityMeasure decay --maxNorm 10 --alphaDecay 0.0001 --patternLanguage Sequence --classification_task Y --labeled_data Y* runs *decay* utility measure with an exponential value of *--alphaDecay 0.0001* while *python3 RPS_runner_CLI.py --model_name MultinomialNB --data_dir Benchmark/Sequence/Books.num --sample_size 10000 --dampingFactor 0.1 --batchsize 1000 --learning_duration 5 --predict_duration 20 --utilityMeasure area --maxNorm 10 --alphaDecay 0.0001 --patternLanguage Sequence --classification_task Y --labeled_data Y* runs the *area* utility measure and does not need *--alphaDecay* to be set.
+- For reproducibility, check whether the utility measure requires additional parameters.
+
 ### C.4. Parameters
 
 - `model_name`: Name of the classifier model to run (default: `MultinomialNB`).
